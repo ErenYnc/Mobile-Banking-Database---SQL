@@ -133,18 +133,18 @@ CREATE TABLE Stock_Transaction (
 -- Step 3: Insert Sample Data
 
 INSERT INTO Cus_Address (AddressID, Country, City, Street, Zip_Code) VALUES
-(1, 'Türkiye', 'İstanbul', 'Yılmaz Caddesi', 34000),
-(2, 'Türkiye', 'Malatya', 'Aslaner Caddesi', 44000),
-(3, 'Türkiye', 'Konya', 'Kocaşahin Caddesi', 42000),
-(4, 'Türkiye', 'Giresun', 'Yenice Caddesi', 28000),
-(5, 'Türkiye', 'İstanbul', 'Esenler', 34000);
+(1, 'TÃ¼rkiye', 'Istanbul', 'YÄ±lmaz Caddesi', 34000),
+(2, 'TÃ¼rkiye', 'Malatya', 'Aslaner Caddesi', 44000),
+(3, 'TÃ¼rkiye', 'Konya', 'Kocasahin Caddesi', 42000),
+(4, 'TÃ¼rkiye', 'Giresun', 'Yenice Caddesi', 28000),
+(5, 'TÃ¼rkiye', 'Istanbul', 'Madenler Caddesi', 34000);
 
 INSERT INTO Customer (CustomerID, FName, LName, PhoneNum, AddressID) VALUES
-(1, 'Volkan', 'Yılmaz', '05538575100', 1),
+(1, 'Mehmet', 'YÄ±lmaz', '05547319220', 1),
 (2, 'Eren', 'Yenice', '05396244134', 2),
-(3, 'Ömer', 'Aslaner', '05511358643', 3),
-(4, 'Muhammed', 'Kocaşahin', '05350149876', 4),
-(5, 'Mustafa', 'Kocaşahin', '05361234571', 5);
+(3, 'Ã–mer', 'Aslaner', '05558918643', 3),
+(4, 'Muhammed', 'Kocasahin', '05351046376', 4),
+(5, 'Mustafa', 'Kocasahin', '05301854571', 5);
 
 INSERT INTO Deposit_Account (DepositAccount_ID, CustomerID, Currency_Type, Balance, Interest_Rate, Maturity_Date, Status_) VALUES
 (1, 1, 'TRY', 10000, 15, '2025-12-31', 'Y'),
@@ -154,17 +154,17 @@ INSERT INTO Deposit_Account (DepositAccount_ID, CustomerID, Currency_Type, Balan
 (5, 5, 'USD', 20000, 18, '2026-08-30', 'N');
 
 INSERT INTO Deposit_Transaction (DepositTransaction_ID, DepositAccount_ID, Transaction_Type, Amount, Transaction_Date, Description_) VALUES
-(1, 1, 'Para Yatırma', 5000, '2025-01-10', 'Yatırım amaçlı para yatırıldı'),
-(2, 2, 'Para Çekme', 1000, '2025-01-12', 'Ödeme için para çekildi'),
-(3, 3, 'Para Yatırma', 2000, '2025-01-13', 'Kampanya için ek yatırıldı'),
-(4, 4, 'Para Çekme', 3000, '2025-01-14', 'Acil nakit çekiş'),
-(5, 5, 'Para Yatırma', 10000, '2025-01-15', 'Yüksek faizli mevduat yatırıldı');
+(1, 1, 'Para YatÃ½rma', 5000, '2025-01-10', 'YatÃ½rÃ½m amaÃ§lÄ± para yatÄ±rÄ±ldÄ±'),
+(2, 2, 'Para Ã‡ekme', 1000, '2025-01-12', 'Ã–deme iÃ§in para Ã§ekildi'),
+(3, 3, 'Para YatÃ½rma', 2000, '2025-01-13', 'Kampanya iÃ§in ek yatÄ±rÄ±ldÄ±'),
+(4, 4, 'Para Ã‡ekme', 3000, '2025-01-14', 'Acil nakit Ã§ekim'),
+(5, 5, 'Para YatÃ½rma', 10000, '2025-01-15', 'YÃ¼ksek faizli mevduat yatÄ±rÄ±ldÄ±');
 
 INSERT INTO Loan_Application (LoanApp_ID, CustomerID, Loan_Type, Amount_Request, App_Date, Status_) VALUES
-(1, 1, 'İhtiyaç Kredisi', 50000, '2025-01-01', 'Y'),
+(1, 1, 'ÃhtiyaÃ§ Kredisi', 50000, '2025-01-01', 'Y'),
 (2, 2, 'Konut Kredisi', 200000, '2025-01-05', 'N'),
-(3, 3, 'Taşıt Kredisi', 100000, '2025-01-10', 'Y'),
-(4, 4, 'İhtiyaç Kredisi', 25000, '2025-01-12', 'Y'),
+(3, 3, 'TaÃ¾Ã½t Kredisi', 100000, '2025-01-10', 'Y'),
+(4, 4, 'ÃhtiyaÃ§ Kredisi', 25000, '2025-01-12', 'Y'),
 (5, 5, 'Konut Kredisi', 300000, '2025-01-15', 'N');
 
 INSERT INTO Loan (Loan_ID, LoanApp_ID, Interest_Rate, Loan_term, Monthly_Payment, StartDate, EndDate, Status_) VALUES
@@ -175,11 +175,11 @@ INSERT INTO Loan (Loan_ID, LoanApp_ID, Interest_Rate, Loan_term, Monthly_Payment
 (5, 2, 10, 48, 1800, '2025-03-05', '2029-03-05', 'N');
 
 INSERT INTO Credit_Card (Card_No, CustomerID, Card_Type, Expration_Date, CVV, Credit_Limit, Minimum_Payment, Interest_Rate, Status_, Billing_Cycle) VALUES
-(1234567890123456, 1, 'Visa', '2028-12-31', '123', 20000, 1000, 15, 'Y', 'Aylık'),
-(2345678901234567, 2, 'MasterCard', '2027-11-30', '234', 15000, 800, 18, 'Y', 'Aylık'),
-(3456789012345678, 3, 'American Express', '2029-02-28', '345', 25000, 1200, 12, 'N', 'Aylık'),
-(4567890123456789, 4, 'Discover', '2026-03-31', '456', 30000, 1500, 10, 'Y', 'Aylık'),
-(5678901234567890, 5, 'Visa', '2028-07-31', '567', 50000, 2500, 20, 'N', 'Aylık');
+(1234567890123456, 1, 'Visa', '2028-12-31', '123', 20000, 1000, 15, 'Y', 'AylÃ½k'),
+(2345678901234567, 2, 'MasterCard', '2027-11-30', '234', 15000, 800, 18, 'Y', 'AylÃ½k'),
+(3456789012345678, 3, 'American Express', '2029-02-28', '345', 25000, 1200, 12, 'N', 'AylÃ½k'),
+(4567890123456789, 4, 'Discover', '2026-03-31', '456', 30000, 1500, 10, 'Y', 'AylÃ½k'),
+(5678901234567890, 5, 'Visa', '2028-07-31', '567', 50000, 2500, 20, 'N', 'AylÃ½k');
 
 INSERT INTO BankAccount (BankAccount_ID, CustomerID, Account_Type, Balance, Open_Date) VALUES
 (1, 1, 'Vadesiz Hesap', 5000, '2025-01-01'),
@@ -189,11 +189,11 @@ INSERT INTO BankAccount (BankAccount_ID, CustomerID, Account_Type, Balance, Open
 (5, 5, 'Vadesiz Hesap', 1500, '2025-01-15');
 
 INSERT INTO Transaction_ (Transaction_ID, BankAccount_ID, Transaction_Type, Amount, Transaction_Date, From_Currency, To_Currency) VALUES
-(1, 1, 'Para Yatırma', 1000, '2025-01-02', 'TRY', 'TRY'),
-(2, 2, 'Para Çekme', 500, '2025-01-06', 'TRY', 'TRY'),
-(3, 3, 'Para Yatırma', 2000, '2025-01-11', 'TRY', 'TRY'),
-(4, 4, 'Para Çekme', 1500, '2025-01-13', 'TRY', 'TRY'),
-(5, 5, 'Para Yatırma', 500, '2025-01-16', 'TRY', 'TRY');
+(1, 1, 'Para YatÃ½rma', 1000, '2025-01-02', 'TRY', 'TRY'),
+(2, 2, 'Para Ã‡ekme', 500, '2025-01-06', 'TRY', 'TRY'),
+(3, 3, 'Para YatÃ½rma', 2000, '2025-01-11', 'TRY', 'TRY'),
+(4, 4, 'Para Ã‡ekme', 1500, '2025-01-13', 'TRY', 'TRY'),
+(5, 5, 'Para YatÃ½rma', 500, '2025-01-16', 'TRY', 'TRY');
 
 INSERT INTO DebitCard (Card_No, BankAccount_ID, Card_Type, Expration_Date, CVV) VALUES
 ('4361736812729124', 1, 'MasterCard', '2027-12-31', '123'),
@@ -210,11 +210,11 @@ INSERT INTO StockAccount (StockAccount_ID, CustomerID, Balance, Open_Date, Statu
 (5, 5, 25432, '2025-01-16', 'N');
 
 INSERT INTO Stock_Transaction (StockTransaction_ID, StockAccount_ID, Stock_Symbol, Transaction_Type, ShareAmount, PricePer_Share, Transaction_Date) VALUES
-(1, 1, 'AAPL', 'Alış', 10, 1500, '2025-01-03'),
-(2, 2, 'GOOG', 'Satış', 5, 2000, '2025-01-07'),
-(3, 3, 'TSLA', 'Alış', 15, 700, '2025-01-12'),
-(4, 4, 'MSFT', 'Satış', 20, 2500, '2025-01-14'),
-(5, 5, 'AMZN', 'Alış', 8, 3000, '2025-01-17');
+(1, 1, 'AAPL', 'AlÃ½Ã¾', 10, 1500, '2025-01-03'),
+(2, 2, 'GOOG', 'SatÃ½Ã¾', 5, 2000, '2025-01-07'),
+(3, 3, 'TSLA', 'AlÃ½Ã¾', 15, 700, '2025-01-12'),
+(4, 4, 'MSFT', 'SatÃ½Ã¾', 20, 2500, '2025-01-14'),
+(5, 5, 'AMZN', 'AlÃ½Ã¾', 8, 3000, '2025-01-17');
 
 -- Step 4: Example Queries
 
@@ -279,7 +279,7 @@ JOIN BankAccount ba ON c.CustomerID = ba.CustomerID;
 SELECT sa.StockAccount_ID, st.Stock_Symbol, st.Transaction_Type, st.ShareAmount, st.PricePer_Share
 FROM StockAccount sa
 INNER JOIN Stock_Transaction st ON sa.StockAccount_ID = st.StockAccount_ID
-WHERE st.Transaction_Type = 'Alış';
+WHERE st.Transaction_Type = 'AlÃ½Ã¾';
 
 SELECT la.LoanApp_ID, la.Loan_Type, la.Amount_Request, la.App_Date
 FROM Loan l
